@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <link rel="stylesheet" href="style.css">
+  <script src="https://unpkg.com/vue"></script>
 </head>
 <body>
   <div class="container">
@@ -23,10 +24,27 @@
         </span>
       </transition-group>
     </div>
+    <div id="sudoku-demo" class="demo cont">
+      <h1>Lazy Sudoku</h1>
+      <p>Keep hitting the shuffle button until you win.</p>
+
+      <button @click="shuffle">
+        Shuffle
+      </button>
+      <transition-group name="cell" tag="div" class="container">
+        <div v-for="cell in cells" :key="cell.id" class="cell">
+          {{ cell.number }}
+        </div>
+      </transition-group>
+    </div>
+    </div>
+
+
+
+
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 
-    <script src="main.js">'use strict';
-    </script>
+    <script src="main.js"></script>
   </div>
 </body>
 </html>
